@@ -2,7 +2,7 @@
 
 - 分支opencl_v3 是用opencl v3版本重构的版本
 
-
+-  [分支opencl_v3 交流 https://t.me/+vPb1g7us8HY3NzRl](https://t.me/+vPb1g7us8HY3NzRl)
 
 
 ## 分支 opencl_v3 安装工具使用说明
@@ -145,6 +145,9 @@ Running...
 ^Ctal: 164.891 MH/s - GPU0: 164.891 MH/s
 ```
 
+## 参考资料：
+
+- [如何编译opencl](https://vcpkg.link/ports/opencl)
 
 
 

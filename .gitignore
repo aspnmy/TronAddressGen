@@ -34,4 +34,9 @@
 x64/
 .vs/
 vcpkg/
+**opencl_x64/*
+**CMakeFiles/*
+**cmake_conf/*
 opencl_x64/
+CMakeFiles/
+cmake_conf/

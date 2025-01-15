@@ -119,12 +119,20 @@ cl_command_queue Dispatcher::Device::createQueue(cl_context &clContext, cl_devic
 	cl_command_queue_properties p = NULL;
 #endif
 
-#ifdef CL_VERSION_2_0
+#if defined(CL_VERSION_3_0)
+	const cl_command_queue ret = clCreateCommandQueueWithProperties(clContext, clDeviceId, &p, NULL);
+#elif defined(CL_VERSION_2_0)
 	const cl_command_queue ret = clCreateCommandQueueWithProperties(clContext, clDeviceId, &p, NULL);
 #else
 	const cl_command_queue ret = clCreateCommandQueue(clContext, clDeviceId, p, NULL);
 #endif
+
+
 	return ret == NULL ? throw std::runtime_error("failed to create command queue") : ret;
+
+
+	
+	
 }
 
 cl_kernel Dispatcher::Device::createKernel(cl_program &clProgram, const std::string s)
@@ -249,10 +257,10 @@ void Dispatcher::run()
 	m_countRunning = m_vDevices.size();
 
 	std::cout << std::endl;
-	std::cout << "¿ªÊ¼Ö´ÐÐ..." << std::endl;
-	std::cout << "  ÓÃµØÖ·Ç°£¬¼ÇµÃÑéÖ¤ÏÂ´òÓ¡³öÀ´µÄË½Ô¿¡£±ðÉµ±Æ±ÆµÄÖ±½ÓÄÃÈ¥ÓÃ" << std::endl;
+	std::cout << "ï¿½ï¿½Ê¼Ö´ï¿½ï¿½..." << std::endl;
+	std::cout << "  ï¿½Ãµï¿½Ö·Ç°ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½Ö¤ï¿½Â´ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë½Ô¿ï¿½ï¿½ï¿½ï¿½Éµï¿½Æ±Æµï¿½Ö±ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½" << std::endl;
 	std::cout << "  Please make sure the program you are running is download from: https://github.com/GG4mida/profanity-tron" << std::endl;
-	std::cout << "  ÇÐ¼Ç¶àÇ©£¡ÇÐ¼Ç¶àÇ©£¡ÇÐ¼Ç¶àÇ©£¡ÖØÒªµÄËµÈý±é" << std::endl;
+	std::cout << "  ï¿½Ð¼Ç¶ï¿½Ç©ï¿½ï¿½ï¿½Ð¼Ç¶ï¿½Ç©ï¿½ï¿½ï¿½Ð¼Ç¶ï¿½Ç©ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½" << std::endl;
 	std::cout << std::endl;
 
 	for (auto it = m_vDevices.begin(); it != m_vDevices.end(); ++it)
@@ -267,8 +275,8 @@ void Dispatcher::run()
 
 void Dispatcher::init()
 {
-	std::cout << "³õÊ¼»¯:" << std::endl;
-	std::cout << "  ¼ÓÔØÊ±¼ä²»Ó¦¸Ã³¬¹ý1·ÖÖÓ..." << std::endl;
+	std::cout << "ï¿½ï¿½Ê¼ï¿½ï¿½:" << std::endl;
+	std::cout << "  ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä²»Ó¦ï¿½Ã³ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½..." << std::endl;
 
 	const auto deviceCount = m_vDevices.size();
 	m_sizeInitTotal = m_size * deviceCount;
@@ -596,7 +604,7 @@ void Dispatcher::printSpeed()
 		}
 
 		const std::string strVT100ClearLine = "\33[2K\r";
-		std::cerr << strVT100ClearLine << "×ÜËÙ: " << formatSpeed(speedTotal) << " -" << strGPUs << '\r' << std::flush;
+		std::cerr << strVT100ClearLine << "ï¿½ï¿½ï¿½ï¿½: " << formatSpeed(speedTotal) << " -" << strGPUs << '\r' << std::flush;
 		m_countPrint = 0;
 	}
 }

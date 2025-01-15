@@ -38,5 +38,9 @@ vcpkg/
 **CMakeFiles/*
 **cmake_conf/*
 opencl_x64/
+
+# Exclude CMake build directories
 CMakeFiles/
 cmake_conf/
+
+TronAddressGen/

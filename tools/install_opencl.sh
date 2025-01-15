@@ -20,7 +20,7 @@ install_opencl() {
 
     # 提示用户如何在 CMake 项目中使用 vcpkg 工具链文件
     echo "已为此 vcpkg 根目录应用用户范围内的集成。"
-    echo 'CMake 项目应使用:"-DCMAKE_TOOLCHAIN_FILE=/root/TronAddressGen/opencl_x64-linux/vcpkg/scripts/buildsystems/vcpkg.cmake"'
+    echo 'CMake 项目应使用:"-DCMAKE_TOOLCHAIN_FILE=/root/TronAddressGen/vcpkg/scripts/buildsystems/vcpkg.cmake"'
 
     # 检测平台并安装 OpenCL
     case "$1" in

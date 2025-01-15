@@ -1,3 +1,0 @@
-/root/TronAddressGen/CMakeFiles/TronAddressGen.dir
-/root/TronAddressGen/CMakeFiles/edit_cache.dir
-/root/TronAddressGen/CMakeFiles/rebuild_cache.dir

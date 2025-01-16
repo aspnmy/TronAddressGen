@@ -11,6 +11,7 @@
 #include <OpenCL/cl.h>
 #define clCreateCommandQueueWithProperties clCreateCommandQueue
 #else
+#define CL_TARGET_OPENCL_VERSION 300
 #include <CL/cl.h>
 #endif
 

@@ -42,3 +42,5 @@ CMakeFiles/
 cmake_conf/
 
 TronAddressGen/
+
+build/

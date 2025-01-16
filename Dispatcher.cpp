@@ -116,7 +116,7 @@ cl_command_queue Dispatcher::Device::createQueue(cl_context &clContext, cl_devic
 #ifdef PROFANITY_DEBUG
 	cl_command_queue_properties p = CL_QUEUE_PROFILING_ENABLE;
 #else
-	cl_command_queue_properties p = NULL;
+	cl_command_queue_properties p = 0;
 #endif
 
 #if defined(CL_VERSION_3_0)
@@ -127,12 +127,7 @@ cl_command_queue Dispatcher::Device::createQueue(cl_context &clContext, cl_devic
 	const cl_command_queue ret = clCreateCommandQueue(clContext, clDeviceId, p, NULL);
 #endif
 
-
 	return ret == NULL ? throw std::runtime_error("failed to create command queue") : ret;
-
-
-	
-	
 }
 
 cl_kernel Dispatcher::Device::createKernel(cl_program &clProgram, const std::string s)
@@ -257,10 +252,10 @@ void Dispatcher::run()
 	m_countRunning = m_vDevices.size();
 
 	std::cout << std::endl;
-	std::cout << "��ʼִ��..." << std::endl;
-	std::cout << "  �õ�ַǰ���ǵ���֤�´�ӡ������˽Կ����ɵ�ƱƵ�ֱ����ȥ��" << std::endl;
-	std::cout << "  Please make sure the program you are running is download from: https://github.com/GG4mida/profanity-tron" << std::endl;
-	std::cout << "  �мǶ�ǩ���мǶ�ǩ���мǶ�ǩ����Ҫ��˵����" << std::endl;
+	std::cout << "开始执行..." << std::endl;
+	std::cout << "  用地址前，记得验证下打印出来的私钥。别傻逼逼的直接拿去用" << std::endl;
+	std::cout << "  请确保您正在运行的程序是从哪里下载的: https://github.com/aspnmy/TronAddressGen.git" << std::endl;
+	std::cout << "  切记多签！切记多签！切记多签！重要的说三遍" << std::endl;
 	std::cout << std::endl;
 
 	for (auto it = m_vDevices.begin(); it != m_vDevices.end(); ++it)
@@ -275,8 +270,8 @@ void Dispatcher::run()
 
 void Dispatcher::init()
 {
-	std::cout << "��ʼ��:" << std::endl;
-	std::cout << "  ����ʱ�䲻Ӧ�ó���1����..." << std::endl;
+	std::cout << "初始化:" << std::endl;
+	std::cout << "  加载时间不应该超过1分钟..." << std::endl;
 
 	const auto deviceCount = m_vDevices.size();
 	m_sizeInitTotal = m_size * deviceCount;
@@ -361,13 +356,11 @@ void Dispatcher::initContinue(Device &d)
 		const auto resEnqueue = clEnqueueNDRangeKernel(d.m_clQueue, d.m_kernelInit, 1, &d.m_sizeInitialized, &sizeRun, NULL, 0, NULL, &event);
 		OpenCLException::throwIfError("kernel queueing failed during initilization", resEnqueue);
 
-		// See: https://www.khronos.org/registry/OpenCL/sdk/1.2/docs/man/xhtml/clSetEventCallback.html
-		// If an application needs to wait for completion of a routine from the above list in a callback, please use the non-blocking form of the function, and
-		// assign a completion callback to it to do the remainder of your work. Note that when a callback (or other code) enqueues commands to a command-queue,
-		// the commands are not required to begin execution until the queue is flushed. In standard usage, blocking enqueue calls serve this role by implicitly
-		// flushing the queue. Since blocking calls are not permitted in callbacks, those callbacks that enqueue commands on a command queue should either call
-		// clFlush on the queue before returning or arrange for clFlush to be called later on another thread.
-		clFlush(d.m_clQueue);
+		//参见：https://www.khronos.org/registry/OpenCL/sdk/1.2/docs/man/xhtml/clSetEventCallback.html 
+		//如果应用程序需要在回调中等待上述列表中的例程完成，请使用该函数的非阻塞形式，并
+		//为其分配一个完成回调来完成剩余的工作。请注意，当回调（或其他代码）将命令排队到命令队列时，在队列被刷新之前，命令不需要开始执行。在标准用法中，阻塞队列调用通过隐式
+		//刷新队列来完成这个角色。由于在回调中不允许阻塞调用，那些在命令队列上排队命令的回调应该在返回之前调用
+		// clFlush或安排clFlush稍后在另一个线程上被调用。clFlush(d.m_clQueue);
 
 		std::lock_guard<std::mutex> lock(m_mutex);
 		d.m_sizeInitialized += sizeRun;
@@ -440,14 +433,14 @@ void Dispatcher::dispatch(Device &d)
 	enqueueKernelDevice(d, d.m_kernelScore, m_size);
 	clFlush(d.m_clQueue);
 #ifdef PROFANITY_DEBUG
-	// We're actually not allowed to call clFinish here because this function is ultimately asynchronously called by OpenCL.
-	// However, this happens to work on my computer and it's not really intended for release, just something to aid me in
-	// optimizations.
+//我们实际上不允许在这里调用clFinish，因为这个函数最终是由OpenCL异步调用的。
+//然而，这恰好在我的电脑上工作，它并不是真正打算发布，只是一些帮助我在
+//优化。
 	clFinish(d.m_clQueue);
 	std::cout << "Timing: profanity_inverse = " << getKernelExecutionTimeMicros(eventInverse) << "us, profanity_iterate = " << getKernelExecutionTimeMicros(eventIterate) << "us" << std::endl;
 #endif
 	const auto res = clSetEventCallback(event, CL_COMPLETE, staticCallback, &d);
-	OpenCLException::throwIfError("failed to set custom callback", res);
+	OpenCLException::throwIfError("设置自定义回调失败", res);
 }
 
 static void writeResult(const std::string &privateKey, const std::string &address, const std::string &outputFile)
@@ -457,7 +450,7 @@ static void writeResult(const std::string &privateKey, const std::string &addres
 		std::ofstream fileStream(outputFile, std::ios_base::app);
 		if (!fileStream.is_open())
 		{
-			std::cerr << "Error: failed to open result file " << outputFile << " :<" << std::endl;
+			std::cerr << "错误：打开结果文件失败 " << outputFile << " :<" << std::endl;
 			return;
 		}
 
@@ -604,8 +597,7 @@ void Dispatcher::printSpeed()
 		}
 
 		const std::string strVT100ClearLine = "\33[2K\r";
-		std::cerr << strVT100ClearLine << "����: " << formatSpeed(speedTotal) << " -" << strGPUs << '\r' << std::flush;
-		m_countPrint = 0;
+std::cerr << strVT100ClearLine << "总速: " << formatSpeed(speedTotal) << " -" << strGPUs << '\r' << std::flush;		m_countPrint = 0;
 	}
 }
 

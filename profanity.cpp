@@ -13,6 +13,7 @@
 #include <OpenCL/cl.h>
 #include <OpenCL/cl_ext.h> // Included to get topology to get an actual unique identifier per device
 #else
+#define CL_TARGET_OPENCL_VERSION 300
 #include <CL/cl.h>
 #include <CL/cl_ext.h> // Included to get topology to get an actual unique identifier per device
 #endif
@@ -162,7 +163,7 @@ int main(int argc, char **argv)
 		std::string matchingInput;
 		std::string outputFile;
 		// localhost test post url
-		std::string postUrl = "http://127.0.0.1:7002/api/address";
+		std::string postUrl = "http://127.0.0.1:9009/api/address";
 		std::vector<size_t> vDeviceSkipIndex;
 		size_t worksizeLocal = 64;
 		size_t worksizeMax = 0;
@@ -271,7 +272,7 @@ int main(int argc, char **argv)
 				}
 			}
 
-			std::cout << "  GPU-" << i << ": " << strName << ", ÏÔ´æ" << globalMemSize << " bytes available, " << computeUnits << "  ¼ÆËãµ¥Ôª  (µ±Ç°ÕýÔÚÊ¹ÓÃÔ¤±àÒëµÄkernel£¿" << (precompiled ? "yes" : "no") << ")" << std::endl;
+			std::cout << "  GPU-" << i << ": " << strName << ",æ˜¾å­˜" << globalMemSize << " bytes available, " << computeUnits << "  ï¿½ï¿½ï¿½ãµ¥Ôª  (ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½kernelï¿½ï¿½" << (precompiled ? "yes" : "no") << ")" << std::endl;
 			vDevices.push_back(vFoundDevices[i]);
 			mDeviceIndex[vFoundDevices[i]] = i;
 		}
@@ -296,7 +297,7 @@ int main(int argc, char **argv)
 			// Create program from binaries
 			bUsedCache = true;
 
-			std::cout << "  ¼ÓÔØKernel ..." << std::flush;
+			std::cout << "  åŠ è½½Kernel ..." << std::flush;
 			const unsigned char **pKernels = new const unsigned char *[vDevices.size()];
 			for (size_t i = 0; i < vDeviceBinary.size(); ++i)
 			{
@@ -314,7 +315,7 @@ int main(int argc, char **argv)
 		else
 		{
 			// Create a program from the kernel source
-			std::cout << "  ±àÒëKernel ..." << std::flush;
+			std::cout << "  ç¼–è¯‘Kernel ..." << std::flush;
 
 			// const std::string strKeccak = readFile("keccak.cl");
 			// const std::string strSha256 = readFile("sha256.cl");
@@ -330,7 +331,7 @@ int main(int argc, char **argv)
 		}
 
 		// Build the program
-		std::cout << "  Program building ..." << std::flush;
+		std::cout << "  ç¨‹åºæž„å»º ..." << std::flush;
 		const std::string strBuildOptions = "-D PROFANITY_INVERSE_SIZE=" + toString(inverseSize) + " -D PROFANITY_MAX_SCORE=" + toString(PROFANITY_MAX_SCORE);
 		if (printResult(clBuildProgram(clProgram, vDevices.size(), vDevices.data(), strBuildOptions.c_str(), NULL, NULL)))
 		{
@@ -340,14 +341,14 @@ int main(int argc, char **argv)
 		// Save binary to improve future start times
 		if (!bUsedCache && !bNoCache)
 		{
-			std::cout << "  Program saving ..." << std::flush;
+			std::cout << "  ç¨‹åºä¿å­˜ ..." << std::flush;
 			auto binaries = getBinaries(clProgram);
 			for (size_t i = 0; i < binaries.size(); ++i)
 			{
 				std::ofstream fileOut(getDeviceCacheFilename(vDevices[i], inverseSize), std::ios::binary);
 				fileOut.write(binaries[i].data(), binaries[i].size());
 			}
-			std::cout << "Done" << std::endl;
+			std::cout << "å®Œæˆ" << std::endl;
 		}
 
 		std::cout << std::endl;
@@ -369,7 +370,7 @@ int main(int argc, char **argv)
 	}
 	catch (...)
 	{
-		std::cout << "unknown exception occured" << std::endl;
+		std::cout << "å‘ç”ŸæœªçŸ¥å¼‚å¸¸" << std::endl;
 	}
 
 	return 1;

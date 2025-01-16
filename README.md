@@ -4,6 +4,17 @@
 
 -  [分支opencl_v3 交流 https://t.me/+vPb1g7us8HY3NzRl](https://t.me/+vPb1g7us8HY3NzRl)
 
+- opencl_v3_x64分支是win系统，依赖项为depend/openCL/opencl_x64-windows
+
+- opencl_v3_linux分支是linux系统，依赖项为depend/openCL/opencl_x64-linux
+
+- opencl_v3_osx分支是Darwin系统，依赖项为depend/openCL/opencl_x64-osx
+
+- cuda_x64 分支是专为N卡优化的业务
+
+- 本地业务数据准备地址 http://127.0.0.1:9009/api/address 此处保存计算得到的地址数据，使用的时候9009端口不要对外开放，
+
+- 米哈同学的miha_opencl_v2 本地调试地址是http://127.0.0.1:7002/api/address
 
 ## 分支 opencl_v3 安装工具使用说明
 

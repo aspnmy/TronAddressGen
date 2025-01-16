@@ -71,115 +71,115 @@
     <ClInclude Include="types.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\cl.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\cl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\cl_d3d10.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\cl_d3d10.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\cl_d3d11.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\cl_d3d11.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\cl_dx9_media_sharing.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\cl_dx9_media_sharing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\cl_dx9_media_sharing_intel.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\cl_dx9_media_sharing_intel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\cl_egl.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\cl_egl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\cl_ext.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\cl_ext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\cl_ext_intel.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\cl_ext_intel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\cl_function_types.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\cl_function_types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\cl_gl.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\cl_gl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\cl_gl_ext.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\cl_gl_ext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\cl_half.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\cl_half.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\cl_icd.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\cl_icd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\cl_layer.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\cl_layer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\cl_platform.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\cl_platform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\cl_va_api_media_sharing_intel.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\cl_va_api_media_sharing_intel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\cl_version.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\cl_version.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\opencl.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\opencl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\cl2.hpp">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\cl2.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\opencl.hpp">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\opencl.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\utils\Context.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\utils\Context.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\utils\Error.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\utils\Error.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\utils\ErrorCodes.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\utils\ErrorCodes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\utils\Event.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\utils\Event.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\utils\File.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\utils\File.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\utils\OpenCLUtilsCpp_Export.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\utils\OpenCLUtilsCpp_Export.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\utils\OpenCLUtils_Export.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\utils\OpenCLUtils_Export.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\utils\Utils.h">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\utils\Utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\utils\Context.hpp">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\utils\Context.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\utils\Detail.hpp">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\utils\Detail.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\utils\Device.hpp">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\utils\Device.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\utils\Error.hpp">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\utils\Error.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\utils\Event.hpp">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\utils\Event.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\utils\File.hpp">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\utils\File.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\utils\InteropContext.hpp">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\utils\InteropContext.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\utils\Platform.hpp">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\utils\Platform.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vcpkg\packages\opencl_x64-windows\include\cl\utils\Utils.hpp">
+    <ClInclude Include="depend\openCL\opencl_x64-linux\include\cl\utils\Utils.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

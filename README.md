@@ -10,7 +10,7 @@
 
 - opencl_v3_osx分支是Darwin系统，依赖项为depend/openCL/opencl_x64-osx
 
-- cuda_x64 分支是专为N卡优化的业务
+- cuda:11.4.3_x64_linux 分支是专为N卡优化,主要为了对接云算力
 
 - 本地业务数据准备地址 http://127.0.0.1:9009/api/address 此处保存计算得到的地址数据，使用的时候9009端口不要对外开放，
 

@@ -1,3 +1,11 @@
+# TronAddressGen 分支 cuda:11.4.3_x64_linux 
+- 是专为N卡优化,主要为了对接云算力
+
+## 分支 cuda:11.4.3_x64_linux 安装工具使用说明
+
+- 根据自己的N卡型号先下载官方驱动 https://www.nvidia.cn/geforce/drivers/
+- 查看官方cuda 开发文档 https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html 
+  
 # TronAddressGen 分支 opencl_v3
 
 - 分支opencl_v3 是用opencl v3版本重构的版本
@@ -10,7 +18,7 @@
 
 - opencl_v3_osx分支是Darwin系统，依赖项为depend/openCL/opencl_x64-osx
 
-- cuda:11.4.3_x64_linux 分支是专为N卡优化,主要为了对接云算力
+
 
 - 本地业务数据准备地址 http://127.0.0.1:9009/api/address 此处保存计算得到的地址数据，使用的时候9009端口不要对外开放，
 

@@ -4,6 +4,12 @@
 
 -  [分支opencl_v3 交流 https://t.me/+vPb1g7us8HY3NzRl](https://t.me/+vPb1g7us8HY3NzRl)
 
+- opencl_v3_x64分支是win系统，依赖项为depend/openCL/opencl_x64-windows
+
+- opencl_v3_linux分支是linux系统，依赖项为depend/openCL/opencl_x64-linux
+
+- opencl_v3_osx分支是Darwin系统，依赖项为depend/openCL/opencl_x64-osx
+
 
 ## 分支 opencl_v3 安装工具使用说明
 

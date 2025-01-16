@@ -14,7 +14,8 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 # 按平台配置工具链
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-    set(CMAKE_TOOLCHAIN_FILE "/root/TronAddressGen/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE FILEPATH "Toolchain file" FORCE)
+# 使用相对位置 兼容性更好
+    set(CMAKE_TOOLCHAIN_FILE "vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE FILEPATH "Toolchain file" FORCE)
 endif()
 
 INCLUDE("${TronAddressGen_SOURCE_DIR}/cmake_conf/TronAddressGen.cmake")
@@ -23,9 +24,9 @@ INCLUDE("TronAddressGen.cmake")
 
 ADD_EXECUTABLE(TronAddressGen
             ${TronAddressGen_SRC})
-
-set(OpenCL_INCLUDE_DIR "/root/TronAddressGen/depend/openCL/opencl_x64-linux/include")
-set(OpenCL_LIBRARY_DIR "/root/TronAddressGen/depend/openCL/opencl_x64-linux/lib")
+# 使用相对位置 兼容性更好
+set(OpenCL_INCLUDE_DIR "depend/openCL/opencl_x64-linux/include")
+set(OpenCL_LIBRARY_DIR "depend/openCL/opencl_x64-linux/lib")
 
 # 输出调试信息
 message(STATUS "OpenCL include directory: ${OpenCL_INCLUDE_DIR}")
